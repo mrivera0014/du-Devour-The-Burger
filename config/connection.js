@@ -3,7 +3,7 @@ const mysql = require('mysql');
 //connecting to mysql
 const connection = mysql.createConnection({
     host: 'localhost',
-    port: process.env.PORT || 8080,
+    port: 3306,
     user: 'root',
     password: 'Canelo!14',
     database: 'burgers_db'
@@ -18,5 +18,4 @@ connection.connect((err) => {
     console.log(`Connected as ID: ${connection.threadId}`)
 })
 
-//exporting connection so that ORM can use it
 module.exports = connection

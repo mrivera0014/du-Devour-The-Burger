@@ -3,33 +3,25 @@
 <h2>Burgers Ready to Devour!</h2>
 <ul>
     {{#each burgers}}
-    {{#unless sleepy}}
-    {{> burgers/burger-block sleep=false}}
+    {{#unless devoured}}
+    <li> {{burger_name}}
+        <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
+            {{#if devoured}}{{else}}Devour!{{/if}}
+        </button>
+    </li>
     {{/unless}}
     {{/each}}
+
+
+
 </ul>
 
+<h2>Burgers Devoured!</h2>
 <ul>
     {{#each burgers}}
-    {{#if sleepy}}
-    {{> cats/cat-block sleep=true}}
+    {{#if devoured}}
+    <li> {{burger_name}}
+    </li>
     {{/if}}
     {{/each}}
 </ul>
-
-<h2>Add a Burger</h2>
-<form id="create-form">
-
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="name">
-    </div>
-
-    <div class="form-group">
-        <label for="sleepy">Devoured?</label><br>
-        <input type="radio" name="sleepy" value="1" id="sleepy" checked> Devoured!<br>
-        <input type="radio" name="sleepy" value="0" id="awake"> Devour
-    </div>
-
-    <button type="submit">Add Burger</button>
-</form>
