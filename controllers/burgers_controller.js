@@ -1,7 +1,7 @@
-const { Router } = require('express');
 const express = require('express');
+const router = express.Router()
 const burger = require('../models/burger')
-// const router = express.Router()
+
 
 router.get('/', (req, res) => {
     burger.selectAll((data) => {
@@ -36,3 +36,5 @@ router.put('/api/burgers/:id', (req, res) => {
         }
     )
 })
+
+module.exports = router
