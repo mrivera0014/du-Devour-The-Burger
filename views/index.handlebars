@@ -1,31 +1,37 @@
 <h1>Nom Nom Nom</h1>
+<img src="/img/krabby-patty.png" alt="krabby-patty" class="krabbyPattyImg">
 
-<h2>Burgers Ready to Devour!</h2>
-<ul>
-    {{#each burgers}}
-    {{#unless this.devoured}}
-    <li> {{this.burger_name}}
-        <button id="change-devoured" data-id="{{this.id}}" data-newdevour="0">
-            Devour!
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
 
-<h2>Burgers Devoured!</h2>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li> {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+<section id="left">
+    <h2>Burgers Ready to Devour!</h2>
+    <ul>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <li> {{this.burger_name}}
+            <button id="change-devoured" data-id="{{this.id}}" data-newdevour="0">
+                Devour!
+            </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</section>
 
-<h2>Create Your Own!</h2>
+<section id="right">
+    <h2>Burgers Devoured!</h2>
+    <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li> {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</section>
+
+
 <form id="create-form">
-
+    <h2>Create Your Own!</h2>
     <div class="form-group">
         <label for="burger">Burger Name:</label>
         <input type="text" id="creatingBurger" name="name">
@@ -34,7 +40,7 @@
     <div class="form-group">
         <label for="devour">Devour Now?</label><br>
         <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
-        <input type="radio" name="devoured" value="0" id="notDevoured"> To be Devoured!
+        <input type="radio" name="devoured" value="0" id="notDevoured"> Not Yet!
     </div>
 
     <button type="submit">Create Burger</button>
