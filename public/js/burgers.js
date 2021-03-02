@@ -41,15 +41,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
-// $(document).ready(function () {
-//     $("#change-devoured").on('click', function () {
-//         alert('Click!')
-//         var id = $(this).data("id")
-//         var devour = 1
-//         var newDevour = { devoured: devour }
-//         $.ajax(`/api/burgers/${id}`, { type: 'PUT', data: newDevour }).then(() => {
-//             console.log("Burger devoured")
-//             location.reload()
-//         })
-//     })
-// })
+
+//Creating new burger
+const createBurger = document.getElementById('create-form');
+
+//grabbing value from text area
+if (createBurger) {
+    createBurger.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const newBurger = {
+            burger_name: document.getElementById('creatingBurger').value.trim(),
+            devour: document.getElementById('devoured').checked,
+        }
+        fetch(`/api/burgers`, {
+            method: "POST",
+            headers:
+            {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newBurger),
+        }).then(() => {
+            document.getElementById('creatingBurger').value = '';
+
+            console.log("A new burger has been created!!");
+            location.reload();
+        })
+    })
+}

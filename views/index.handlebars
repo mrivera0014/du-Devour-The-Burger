@@ -22,3 +22,20 @@
     {{/if}}
     {{/each}}
 </ul>
+
+<h2>Create Your Own!</h2>
+<form id="create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="creatingBurger" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="devour">Devour Now?</label><br>
+        <input type="radio" name="devoured" value="1" id="devoured" checked> Devoured!<br>
+        <input type="radio" name="devoured" value="0" id="notDevoured"> To be Devoured!
+    </div>
+
+    <button type="submit">Create Burger</button>
+</form>
