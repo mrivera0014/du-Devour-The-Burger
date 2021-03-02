@@ -3,18 +3,17 @@
 <h2>Burgers Ready to Devour!</h2>
 <ul>
     {{#each burgers}}
-    {{#unless devoured}}
-    <li> {{burger_name}}
-        <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
-            {{#if devoured}}{{else}}Devour!{{/if}}
+    {{#unless this.devoured}}
+    <li> {{this.burger_name}}
+        <button id="change-devoured" data-id="{{this.id}}" data-newdevour="{{this.devour}}">
+            Devour!
         </button>
     </li>
     {{/unless}}
     {{/each}}
-
-
-
 </ul>
+
+
 
 <h2>Burgers Devoured!</h2>
 <ul>

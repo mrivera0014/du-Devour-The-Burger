@@ -11,6 +11,22 @@ const printQuestionMarks = (num) => {
     return arr.toString();
 };
 
+const objToSql = (obj) => {
+    const arr = [];
+
+    for (const key in obj) {
+        let value = obj[key];
+
+        if (Object.hasOwnProperty.call(obj, key)) {
+            if (typeof value === 'string' && value.indexOf(' ') >= 0) {
+                value = '${value}';
+            }
+            arr.push(`${key} = ${value}`)
+        }
+    }
+    return arr.toString();
+};
+
 const orm = {
     selectAll(tableInput, cb) {
         let queryString = `SELECT * FROM ${tableInput};`;
