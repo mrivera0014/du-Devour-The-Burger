@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 event.preventDefault()
                 const id = e.target.getAttribute('data-id');
                 const newDevour = e.target.getAttribute('data-newdevour');
-                alert('I have been clicked')
+                // alert('I have been clicked')
                 //data newDevour came in as a string and we converted it into a number
                 let something = parseInt(newDevour) + 1
                 const newDevourState = {
