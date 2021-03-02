@@ -13,9 +13,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const id = e.target.getAttribute('data-id');
                 const newDevour = e.target.getAttribute('data-newdevour');
                 alert('I have been clicked')
+                //data newDevour came in as a string and we converted it into a number
+                let something = parseInt(newDevour) + 1
                 const newDevourState = {
-                    devoured: newDevour
+                    devoured: something
                 };
+                console.log(newDevourState)
 
                 fetch(`/api/burgers/${id}`, {
                     method: "PUT",
