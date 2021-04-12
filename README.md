@@ -26,6 +26,9 @@ For this project express, express-handlebars, and mysql were used.
 If you have any questions contact me at mrivera0014@gmail.com.
 Find more of my work at (https://github.com/mrivera0014/)
 
+## Screenshot
+![screenshot](public/img/Eat-The-Burger.PNG)
+
 ## Links
 
 https://github.com/mrivera0014/du-Devour-The-Burger
